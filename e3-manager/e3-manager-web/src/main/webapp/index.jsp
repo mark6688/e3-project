@@ -7,6 +7,6 @@
     <title>Insert title here</title>
 </head>
 <body>
-<h1>hello 宜立方商城</h1>
+<h1>hello 小项目~</h1>
 </body>
 </html>
