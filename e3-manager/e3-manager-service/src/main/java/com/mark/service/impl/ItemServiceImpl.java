@@ -1,6 +1,5 @@
 package com.mark.service.impl;
 
-import com.mark.mapper.TbItemCatMapper;
 import com.mark.mapper.TbItemMapper;
 import com.mark.pojo.TbItem;
 import com.mark.pojo.TbItemExample;
@@ -18,8 +17,6 @@ public class ItemServiceImpl implements ItemService {
 
     @Autowired
     private TbItemMapper tbItemMapper;
-    @Autowired
-    private TbItemCatMapper tbItemCatMapper;
 
     @Override
     public TbItem getItemById(long id) {
