@@ -1,5 +1,6 @@
 package com.mark.service;
 
+import com.mark.commen.EasyUIDataGridResult;
 import com.mark.pojo.TbItem;
 
 /**
@@ -8,5 +9,7 @@ import com.mark.pojo.TbItem;
 public interface ItemService {
 
     TbItem getItemById(long id);
+
+    EasyUIDataGridResult getItemList(int page, int rows);
 
 }

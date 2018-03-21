@@ -1,5 +1,8 @@
 package com.mark.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.mark.commen.EasyUIDataGridResult;
 import com.mark.mapper.TbItemMapper;
 import com.mark.pojo.TbItem;
 import com.mark.pojo.TbItemExample;
@@ -32,5 +35,22 @@ public class ItemServiceImpl implements ItemService {
         }
         return null;
     }
+
+    @Override
+    public EasyUIDataGridResult getItemList(int page, int rows) {
+        //设置分页
+        PageHelper.startPage(page,rows);
+        //执行查询
+        TbItemExample example = new TbItemExample();
+        List<TbItem> list = tbItemMapper.selectByExample(example);
+        //取分页信息
+        PageInfo<TbItem> pageInfo = new PageInfo <>(list);
+
+        //创建返回结果对象
+        EasyUIDataGridResult result = new EasyUIDataGridResult(pageInfo.getTotal(),list);
+
+        return result;
+    }
+
 
 }
