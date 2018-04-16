@@ -19,6 +19,7 @@
 
     <!--jsp资源拦截-->
     <mvc:annotation-driven />
+
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/" />
         <property name="suffix" value=".jsp" />
@@ -26,7 +27,7 @@
 
     <!-- 引用dubbo服务 -->
     <dubbo:application name="e3-manager-web"/>
-    <dubbo:registry protocol="zookeeper" address="192.168.37.139:2181,192.168.37.139:2182,192.168.37.139:2183"/>
+    <dubbo:registry protocol="zookeeper" address="192.168.37.139:2181"/>
     <dubbo:reference interface="com.mark.service.ItemService" id="itemService" />
 
     <!--资源映射标签-->
