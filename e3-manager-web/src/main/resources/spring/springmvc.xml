@@ -14,8 +14,10 @@
         http://code.alibabatech.com/schema/dubbo
         http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
+    <!--Controller类扫描-->
     <context:component-scan base-package="com.mark.controller" />
 
+    <!--jsp资源拦截-->
     <mvc:annotation-driven />
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/" />
@@ -26,5 +28,9 @@
     <dubbo:application name="e3-manager-web"/>
     <dubbo:registry protocol="zookeeper" address="192.168.37.139:2181,192.168.37.139:2182,192.168.37.139:2183"/>
     <dubbo:reference interface="com.mark.service.ItemService" id="itemService" />
+
+    <!--资源映射标签-->
+    <mvc:resources mapping="/js/**" location="/WEB-INF/js/"/>
+    <mvc:resources mapping="/css/**" location="/WEB-INF/css/"/>
 
 </beans>
