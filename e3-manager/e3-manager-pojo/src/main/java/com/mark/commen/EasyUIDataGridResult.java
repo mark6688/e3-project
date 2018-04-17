@@ -1,11 +1,12 @@
 package com.mark.commen;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by mk on 2018/3/20.
  */
-public class EasyUIDataGridResult {
+public class EasyUIDataGridResult implements Serializable {
 
     private Long total;
 
