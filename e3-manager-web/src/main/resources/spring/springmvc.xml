@@ -25,13 +25,14 @@
         <property name="suffix" value=".jsp" />
     </bean>
 
+    <!--资源映射标签-->
+    <mvc:resources mapping="/js/**" location="/WEB-INF/js/"/>
+    <mvc:resources mapping="/css/**" location="/WEB-INF/css/"/>
+
     <!-- 引用dubbo服务 -->
     <dubbo:application name="e3-manager-web"/>
     <dubbo:registry protocol="zookeeper" address="192.168.37.139:2181"/>
     <dubbo:reference interface="com.mark.service.ItemService" id="itemService" />
-
-    <!--资源映射标签-->
-    <mvc:resources mapping="/js/**" location="/WEB-INF/js/"/>
-    <mvc:resources mapping="/css/**" location="/WEB-INF/css/"/>
+    <dubbo:reference interface="com.mark.service.ItemCatService" id="itemCatService" />
 
 </beans>
